@@ -6,5 +6,5 @@ defaults:
 
 modules:
   - name: sensorring_joint
-    id: 73
+    id: 1
 
