@@ -1,6 +1,5 @@
 ## joint_names
-joint_names: [bl_caster_r_wheel_joint]
-#joint_names: [bl_caster_r_wheel_joint, bl_caster_rotation_joint, br_caster_r_wheel_joint, br_caster_rotation_joint, fl_caster_r_wheel_joint, fl_caster_rotation_joint]
+joint_names: [bl_caster_r_wheel_joint, bl_caster_rotation_joint, br_caster_r_wheel_joint, br_caster_rotation_joint, fl_caster_r_wheel_joint, fl_caster_rotation_joint]
 
 ## control_mode_adapter
 max_command_silence: 0.5
@@ -14,21 +13,21 @@ joint_state_controller:
 joint_trajectory_controller:
   type: position_controllers/JointTrajectoryController
   joints:
-      - bl_caster_r_wheel_joint
- #    - bl_caster_rotation_joint
- #    - br_caster_r_wheel_joint
- #    - br_caster_rotation_joint
- #    - fl_caster_r_wheel_joint
- #    - fl_caster_rotation_joint
+     - bl_caster_r_wheel_joint
+     - bl_caster_rotation_joint
+     - br_caster_r_wheel_joint
+     - br_caster_rotation_joint
+     - fl_caster_r_wheel_joint
+     - fl_caster_rotation_joint
   constraints:
       goal_time: 0.6
       stopped_velocity_tolerance: 0.05
       bl_caster_r_wheel_joint: {trajectory: 0.1, goal: 0.1}
-  #    bl_caster_rotation_joint: {trajectory: 0.1, goal: 0.1}
-  #    br_caster_r_wheel_joint: {trajectory: 0.1, goal: 0.1}
-  #    br_caster_rotation_joint: {trajectory: 0.1, goal: 0.1}
-  #    fl_caster_r_wheel_joint: {trajectory: 0.1, goal: 0.1}
-  #    fl_caster_rotation_joint: {trajectory: 0.1, goal: 0.1}
+      bl_caster_rotation_joint: {trajectory: 0.1, goal: 0.1}
+      br_caster_r_wheel_joint: {trajectory: 0.1, goal: 0.1}
+      br_caster_rotation_joint: {trajectory: 0.1, goal: 0.1}
+      fl_caster_r_wheel_joint: {trajectory: 0.1, goal: 0.1}
+      fl_caster_rotation_joint: {trajectory: 0.1, goal: 0.1}
   stop_trajectory_duration: 0.5
   state_publish_rate:  25
   action_monitor_rate: 10
@@ -39,71 +38,71 @@ joint_group_position_controller:
   type: position_controllers/JointGroupPositionController
   joints:
       - bl_caster_r_wheel_joint
-   #  - bl_caster_rotation_joint
-   #  - br_caster_r_wheel_joint
-   #  - br_caster_rotation_joint
-   #  - fl_caster_r_wheel_joint
-   #  - fl_caster_rotation_joint
+     - bl_caster_rotation_joint
+     - br_caster_r_wheel_joint
+     - br_caster_rotation_joint
+     - fl_caster_r_wheel_joint
+     - fl_caster_rotation_joint
   required_drive_mode: 1
      
 bl_caster_r_wheel_joint_position_controller:
   type: position_controllers/JointPositionController
   joint: bl_caster_r_wheel_joint
   required_drive_mode: 1
-#bl_caster_r_wheel_joint_position_controller:
-#  type: position_controllers/JointPositionController
-#  joint: bl_caster_rotation_joint
-#  required_drive_mode: 1
-#br_caster_r_wheel_joint_position_controller:
-#  type: position_controllers/JointPositionController
-#  joint: br_caster_r_wheel_joint
-#  required_drive_mode: 1
-#br_caster_rotation_joint_position_controller:
-#  type: position_controllers/JointPositionController
-#  joint: br_caster_rotation_joint
-#  required_drive_mode: 1
-#fl_caster_r_wheel_joint_position_controller:
-#  type: position_controllers/JointPositionController
-#  joint: fl_caster_r_wheel_joint
-#  required_drive_mode: 1
-#fl_caster_rotation_joint_position_controller:
-#  type: position_controllers/JointPositionController
-#  joint: fl_caster_rotation_joint
-#  required_drive_mode: 1
+bl_caster_r_wheel_joint_position_controller:
+  type: position_controllers/JointPositionController
+  joint: bl_caster_rotation_joint
+  required_drive_mode: 1
+br_caster_r_wheel_joint_position_controller:
+  type: position_controllers/JointPositionController
+  joint: br_caster_r_wheel_joint
+  required_drive_mode: 1
+br_caster_rotation_joint_position_controller:
+  type: position_controllers/JointPositionController
+  joint: br_caster_rotation_joint
+  required_drive_mode: 1
+fl_caster_r_wheel_joint_position_controller:
+  type: position_controllers/JointPositionController
+  joint: fl_caster_r_wheel_joint
+  required_drive_mode: 1
+fl_caster_rotation_joint_position_controller:
+  type: position_controllers/JointPositionController
+  joint: fl_caster_rotation_joint
+  required_drive_mode: 1
 
 ## velocity controller
 joint_group_velocity_controller:
   type: velocity_controllers/JointGroupVelocityController
   joints:
      - bl_caster_r_wheel_joint
- #    - bl_caster_rotation_joint
- #    - br_caster_r_wheel_joint
- #    - br_caster_rotation_joint
- #    - fl_caster_r_wheel_joint
- #    - fl_caster_rotation_joint
+     - bl_caster_rotation_joint
+     - br_caster_r_wheel_joint
+     - br_caster_rotation_joint
+     - fl_caster_r_wheel_joint
+     - fl_caster_rotation_joint
   required_drive_mode: 3
 
 bl_caster_r_wheel_joint_velocity_controller:
   type: velocity_controllers/JointVelocityController
   joint: bl_caster_r_wheel_joint
   required_drive_mode: 3
-#bl_caster_r_wheel_joint_velocity_controller:
-#  type: velocity_controllers/JointVelocityController
-#  joint: bl_caster_rotation_joint
-#  required_drive_mode: 3
-#bl_caster_r_wheel_joint_velocity_controller:
-#  type: velocity_controllers/JointVelocityController
-#  joint: br_caster_r_wheel_joint
-#  required_drive_mode: 3
-#bl_caster_r_wheel_joint_velocity_controller:
-#  type: velocity_controllers/JointVelocityController
-#  joint: bl_caster_rotation_joint
-#  required_drive_mode: 3
-#bl_caster_r_wheel_joint_velocity_controller:
-#  type: velocity_controllers/JointVelocityController
-#  joint: fl_caster_r_wheel_joint
-#  required_drive_mode: 3
-#bl_caster_r_wheel_joint_velocity_controller:
-#  type: velocity_controllers/JointVelocityController
-#  joint: fl_caster_rotation_joint
-#  required_drive_mode: 3
+bl_caster_r_wheel_joint_velocity_controller:
+  type: velocity_controllers/JointVelocityController
+  joint: bl_caster_rotation_joint
+  required_drive_mode: 3
+bl_caster_r_wheel_joint_velocity_controller:
+  type: velocity_controllers/JointVelocityController
+  joint: br_caster_r_wheel_joint
+  required_drive_mode: 3
+bl_caster_r_wheel_joint_velocity_controller:
+  type: velocity_controllers/JointVelocityController
+  joint: bl_caster_rotation_joint
+  required_drive_mode: 3
+bl_caster_r_wheel_joint_velocity_controller:
+  type: velocity_controllers/JointVelocityController
+  joint: fl_caster_r_wheel_joint
+  required_drive_mode: 3
+bl_caster_r_wheel_joint_velocity_controller:
+  type: velocity_controllers/JointVelocityController
+  joint: fl_caster_rotation_joint
+  required_drive_mode: 3
